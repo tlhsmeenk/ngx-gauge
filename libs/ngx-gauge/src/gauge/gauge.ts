@@ -277,7 +277,9 @@ export class NgxGauge implements AfterViewInit, OnChanges, OnDestroy {
     }
 
     private _update(nv: number, ov: number) {
-        this._clear();
+        
+        /* Excessive clears seem to be causing refresh issues on safari */
+        //this._clear();
         this._create(nv, ov);
     }
 
